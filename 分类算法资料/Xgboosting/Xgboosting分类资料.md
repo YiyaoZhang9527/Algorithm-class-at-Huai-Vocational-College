@@ -14,4 +14,4 @@
 
 [文字！ Huber Loss和Focal Loss的原理与实现](https://cloud.tencent.com/developer/article/1392341)
 
-[文字！ 机器学习常用的5种损失函数](https://www.jiqizhixin.com/articles/2018-06-21-3)
+[文字！ 论述了机器学习常用的5种损失函数及其作用和原理](https://www.jiqizhixin.com/articles/2018-06-21-3)
