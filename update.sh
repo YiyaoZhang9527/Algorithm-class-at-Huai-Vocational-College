@@ -1,6 +1,6 @@
 # git init
 git add .
-git commit -m "更新了 Xgboosting分类资料.md 加入了 两篇关于不同情况下损失函数选择方法的文章 "
+git commit -m "更新了 粗糙集基础知识.ipynb  "
 # git remote add origin https://github.com/YiyaoZhang9527/Algorithm-class-at-Huai-Vocational-College.git
 git branch -M master
 git push -u origin master

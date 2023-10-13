@@ -1,0 +1,9 @@
+.ipynb_checkpoints/
+.virtual_documents/
+.vscode
+# *.csv
+*.npy
+*.html
+*.txt
+*.ckpt
+*.sh
