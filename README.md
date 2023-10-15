@@ -47,4 +47,4 @@
 
 [【微积分基础】【 UP主汉语配音-【微积分的本质】合集-转载于3Blue1Brown官方双语】](https://www.bilibili.com/video/BV1ob411y7L9/?spm_id_from=333.337.search-card.all.click&vd_source=ce2c265fe654b727a504cf64875b6105)
 
-[博弈论 【公开课】【博弈论基础】我推荐所有人学点博弈论](https://www.bilibili.com/video/BV1eT411A7d1/?vd_source=ce2c265fe654b727a504cf64875b6105)
+[【博弈论基础】【公开课】【博弈论基础】我推荐所有人学点博弈论](https://www.bilibili.com/video/BV1eT411A7d1/?vd_source=ce2c265fe654b727a504cf64875b6105)
