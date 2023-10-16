@@ -9,7 +9,6 @@
 # here put the import lib
 
 
-import jieba
 import numpy as np
 import pandas as pd
 
