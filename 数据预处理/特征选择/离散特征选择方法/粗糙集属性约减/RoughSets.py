@@ -14,7 +14,7 @@ class RoughSets():
         self.V = np.unique(np.ravel(self.U[:,1:]))
         self.cores = self.Core(D=[self.R[-1]]
                                ,U=self.U
-                               ,R = self.R,C=self.C)
+                               ,R = self.R,C=self.C,out_dataframe=True)
         
     
     def VaRange(self,U=None,R=None):
@@ -557,8 +557,8 @@ class RoughSets():
         #     C = self.C
             
         PoscD = [v for k,v in self.Pos_C(U=U,R=R,D=D,C=C).items()]
-        return_eq = {"属性名":[],"是否可省略":[],"是否是核":[]}
-        Uij = set(np.ravel(U[:,:1]))
+        return_eq = {"属性名":[],"是否可省略":[],"是否是核":[]}#,"保留属性":[],"保留属性近似分类质量":[]}
+        Uij = {j for i in PoscD for j in i} #set(np.ravel(U[:,:1]))
         for a in C:
             Ca = list(C)
             Ca.remove(str(a)) 
@@ -568,6 +568,8 @@ class RoughSets():
             return_eq["属性名"].append(a)
             return_eq["是否可省略"].append(isCore!=True)
             return_eq["是否是核"].append(isCore)
+            # return_eq["保留属性"].append(Ca)
+            # return_eq["保留属性近似分类质量"].append(len(lower_set)/U.shape[0])
         if out_dataframe:
             return pd.DataFrame(return_eq)
         return return_eq
@@ -589,7 +591,7 @@ class RoughSets():
             如果回复True就是可以同时删除，如果回复是False就是不可以同时删除
         """
         PoscD = [v for k,v in self.Pos_C(U=U,R=R,D=D,C=C).items()]
-        Uij = set(np.ravel(U[:,:1]))
+        Uij = {j for i in PoscD for j in i}#set(np.ravel(U[:,:1]))
         Ca = list(C)
         for a in Cn:        
             Ca.remove(str(a)) 
@@ -703,6 +705,6 @@ if __name__ == '__main__':
     
     print(RS.cores)
     
-    Cn = np.array(RS.cores['属性名'])[np.array(RS.cores['是否可省略'])]
+    Cn = ["天气","湿度"]#np.array(RS.cores['属性名'])[np.array(RS.cores['是否可省略'])]
     D=[RS.R[-1]]
     print(RS.KnowledgeReduction(D=D,Cn=Cn,U=RS.U,R=RS.R,C=RS.C))
