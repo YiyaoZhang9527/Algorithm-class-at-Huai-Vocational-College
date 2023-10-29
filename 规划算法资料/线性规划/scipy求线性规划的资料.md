@@ -12,3 +12,11 @@ scipy线性规划的标准形式如下：
   [原文链接：](https://blog.csdn.net/weixin_44211968/article/details/123544653)
 
 [scipy.optimize.linprog 实现线性规划](https://www.cnblogs.com/MorStar/p/14967794.html)
+
+
+[整数规划Python案例](https://blog.csdn.net/abc1234564546/article/details/126263264)
+
+
+安装cvxpy
+
+pip install cvxpy cvxopt numpy mkl
