@@ -3,6 +3,14 @@ import math
 import random
 import matplotlib.pyplot as plt
 
+import platform
+
+system = platform.system()
+if system == "Linux":
+    plt.rcParams['font.sans-serif'] = ["Noto Sans CJK JP"]
+elif system == "Darwin":
+    plt.rcParams['font.sans-serif'] = ["Kaiti SC"]
+plt.rcParams['axes.unicode_minus'] = False
 
 NUM_OF_DATA = 100
 
