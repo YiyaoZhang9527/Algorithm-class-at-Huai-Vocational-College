@@ -31,6 +31,7 @@ def bayes(data,*conditions,**cond):
     m,n = data.shape
     conditions_lenght = len(conditions)
     ybool = data[:,-1]==cond['cond']
+    # print(f"ybool:{ybool}")
     result = 0
     for i in range((conditions_lenght)):
         tmp = ((data[:,i]==conditions[i])&ybool)[ybool].sum()/m
@@ -45,7 +46,12 @@ def naive_bayes(data,*conditions,**conds):
     返回：分类结果 ，贝叶斯推断概率向量
     '''
     conds = np.array(conds['conds'])
-    expr = np.array([bayes(data,*conditions,cond=cond) for cond in conds])
+    # expr = np.array(
+    #     [bayes(data,*conditions,cond=cond) for cond in conds])
+    expr = np.zeros(len(conds))
+    for i,cond in enumerate(conds):
+        expr[i] = bayes(data,*conditions,cond=cond) 
+
     return conds[expr==expr.max()][0],expr
 
 
@@ -57,5 +63,5 @@ if __name__ == "__main__":
     ,'性别':['男','男','男','男','女','女','女','女']
 }) 
     data = table1.to_numpy()
-    print(naive_bayes(data,'高','大','小',conds=['男','女']))
+    print("naive_bayes:",naive_bayes(data,'高','大','小',conds=['男','女']))
 
