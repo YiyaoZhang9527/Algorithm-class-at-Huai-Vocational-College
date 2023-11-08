@@ -19,7 +19,7 @@ import matplotlib.pyplot as plt
 
 
 # # 单变量退火
-def PDE(DE, t, k=1):
+def PDE(DE, T, k=1):
     '''
 
     Args:
@@ -30,7 +30,7 @@ def PDE(DE, t, k=1):
     Returns:
 
     '''
-    return np.exp((DE) / (k * t))
+    return np.exp((DE) / (k * T))
 
 
 def DE_function(new, old):
@@ -62,11 +62,12 @@ def jump(DE, T, k=1):
 
 def simulate_anneal(func,
                     parameter={
-                        "T": 1,
-                        "T_min": 0,
-                        "r": 0.0001,
-                        "expr": 0,
-                        "jump_max": np.inf
+                        "T": 1, #系统的温度，系统初始应该要处于一个高温的状态
+                        "T_min": 0, #温度的下限，若温度T达到T_min，则停止搜索
+                        "r": 0.0001, #用于控制降温的快慢 值越小T更新越快，退出越快
+                        "expr": 0, #初始解
+                        "jump_max": np.inf,
+                        "k":1 # k越小越不容易退出
                     }):
     '''
 
@@ -77,6 +78,7 @@ def simulate_anneal(func,
     Returns:
 
     '''
+    
     path, funcpath = [], []
     T = parameter["T"]  # 系统温度，初时应在高温
     T_min = parameter["T_min"]  # 最小温度值
@@ -85,17 +87,22 @@ def simulate_anneal(func,
     expr = parameter["expr"]  # 假设初解
     jump_max = parameter["jump_max"]  # 最大冷却值
     jump_counter = 0
+    k = parameter["k"]
     while T > T_min:
         counter += 1
         new_expr = func.__next__()  # 迭代新解
         funcpath.append(new_expr)
         DE = new_expr - expr
         if DE <= 0:
+            # 如果新解比假设初解或者上一个达标解要小，就更新解
             expr = new_expr
+            # 跳出域值更新为0 
             jump_counter = 0
         elif DE > 0:
+            # 如果新解比假设初解或者上一个达标解要大，就不更新解
             expr = expr
-            if jump(DE, T):
+            if jump(DE, T,k):
+                # 每更新一次T更新一次
                 T *= r
                 jump_counter += 1
                 if jump_counter > jump_max:
@@ -124,9 +131,10 @@ if __name__ == "__main__":
                                            parameter={
                                                "T": 1,
                                                "T_min": 0,
-                                               "r": 0.11,
+                                               "r": 0.4,
                                                "expr": 0,
-                                               "jump_max": 1000
+                                               "jump_max": 1000,
+                                               "k":0.000001
                                            })
     print(expr)
     plt.figure(figsize=(16, 9))  # %%
