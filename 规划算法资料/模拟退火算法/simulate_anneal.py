@@ -62,11 +62,11 @@ def jump(DE, T, k=1):
 
 def simulate_anneal(func,
                     parameter={
-                        "T": 1, #系统的温度，系统初始应该要处于一个高温的状态
+                        "T": 1, #系统的温度，系统初始应该要处于一个高温的状态 初始温度越高，且马尔科夫链越长，算法搜索越充分，得到全局最优解的可能性越大，但这也意味着需要耗费更多的计算时间
                         "T_min": 0, #温度的下限，若温度T达到T_min，则停止搜索
                         "r": 0.0001, #用于控制降温的快慢 值越小T更新越快，退出越快
                         "expr": 0, #初始解
-                        "jump_max": np.inf,
+                        "jump_max": np.inf, #最大回炉停留次数
                         "k":1 # k越小越不容易退出
                     }):
     '''
@@ -92,7 +92,7 @@ def simulate_anneal(func,
         counter += 1
         new_expr = func.__next__()  # 迭代新解
         funcpath.append(new_expr)
-        DE = new_expr - expr
+        DE = DE_function(new_expr , expr)
         if DE <= 0:
             # 如果新解比假设初解或者上一个达标解要小，就更新解
             expr = new_expr
