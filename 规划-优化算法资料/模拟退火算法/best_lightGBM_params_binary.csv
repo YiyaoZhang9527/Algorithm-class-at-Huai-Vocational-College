@@ -1,0 +1,2 @@
+verbose,min_data_in_leaf,objective,metric,num_leaves,boosting,n_estimators,tree_learner,max_bin,min_data_in_bin,max_depth,learning_rate,bagging_fraction,feature_fraction,lambda_l1,lambda_l2,n_jobs,seed,bagging_freq,is_unbalance,early_stopping_rounds,device_type,best_auc
+-1,100,binary,auc,20,gbdt,1318,feature,1000,19,20,0.35943061465426596,0.6213715254916309,0.1,0.0,0.0,-1,0,99,False,1000,cpu,-0.9993449066491975

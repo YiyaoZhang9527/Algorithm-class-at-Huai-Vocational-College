@@ -1,0 +1,17 @@
+params_name,lb,ub,precision
+learning_rate,0.1,1,0.1
+n_estimators,5.0,100,1.0
+max_depth,1.0,20,1.0
+min_child_weight,0.0,100,0.1
+gamma,0.0,1,0.1
+subsample,0.0,1,0.1
+lambda,0.0,100,0.1
+eta,0.0,3,1.0
+seed,10.0,100,1.0
+max_delta_step,0.0,10,0.1
+sampling_method,0.0,1,1.0
+colsample_bytree,0.0,1,0.1
+colsample_bylevel,0.0,1,0.1
+colsample_bynode,0.0,1,0.1
+max_leaves,0.0,30,1.0
+num_parallel_tree,1.0,30,1.0
