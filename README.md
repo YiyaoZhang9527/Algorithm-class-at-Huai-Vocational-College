@@ -41,7 +41,11 @@
 
 希望每个喜欢或者课程需要而学习的同学在这些人类智慧的灵光闪耀时当中玩儿的愉快
 
+#### 数学基础概念推荐网课：
+
 [【统计学基础】统计学速成课 Statistics - [45集全/中英双语] - Crash Course Statistics](https://www.bilibili.com/video/av84276673/?p=&vd_source=ce2c265fe654b727a504cf64875b6105)
+
+[【中文概率论基础】70分钟概率论通俗讲解 【中文课程】](https://www.bilibili.com/video/BV1fM411f7cX/?buvid=Z54EC55A3FFA99FD44CFB9332BE8961B69B9&is_story_h5=false&mid=uL3MQa8LoOiDbD2ugbClFg%3D%3D&p=1&plat_id=114&share_from=ugc&share_medium=iphone&share_plat=ios&share_source=GENERIC&share_tag=s_i&timestamp=1701650770&unique_k=awDBrFT&up_id=495226768&vd_source=ce2c265fe654b727a504cf64875b6105)
 
 [【线性代数基础】 UP主汉语配音-【线性代数的本质】合集-转载于3Blue1Brown官方双语】](https://www.bilibili.com/video/BV1ib411t7YR/?spm_id_from=333.337.search-card.all.click&vd_source=ce2c265fe654b727a504cf64875b6105)
 
